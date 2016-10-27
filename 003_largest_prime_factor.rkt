@@ -5,3 +5,6 @@
 (include "l.rkt")
 
 (displayln "Tengfei Guo")
+(prime? 5)
+
+
