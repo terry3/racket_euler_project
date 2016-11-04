@@ -28,3 +28,6 @@
           (else
            (helper (- x 1)))))
   (reverse (helper n)))
+
+(define (string-reverse str)
+  (list->string (reverse (string->list str))))

@@ -11,7 +11,7 @@
         (inexact->exact i)
         (find-iter (- i 2)))
       (find-iter (- i 2))))
-  (if (factor? 2 (floor (sqrt n)))
+  (if (= 0 (% (floor (sqrt n)) 2))
     (find-iter (+ (floor (sqrt n)) 1))
     (find-iter (floor (sqrt n)))))
 
