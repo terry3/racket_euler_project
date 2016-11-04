@@ -9,6 +9,10 @@
               [(= 0 (% n x)) #f]
               [else (loop (sub1 x))]))))
 
+(define (factor? a b)
+  (= (modulo b a) 0))
+
+
 (define (factorial x)
   (let loop ((x x)
              (acc 1))

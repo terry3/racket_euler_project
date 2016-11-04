@@ -4,7 +4,19 @@
 
 (include "l.rkt")
 
-(displayln "Tengfei Guo")
-(prime? 5)
+(define (find-max-factor n)
+  (define (find-iter i)
+    (if (factor? i n)
+      (if (prime? i)
+        (inexact->exact i)
+        (find-iter (- i 2)))
+      (find-iter (- i 2))))
+  (if (factor? 2 (floor (sqrt n)))
+    (find-iter (+ (floor (sqrt n)) 1))
+    (find-iter (floor (sqrt n)))))
+
+(find-max-factor 600851475143)
+
+
 
 
