@@ -7,9 +7,9 @@
   (equal? (number->string n) (string-reverse (number->string n))))
 
 (define (find-largest-palindrome-product low high)
-  (for*/first ([x (in-range high low)]
-               [y (in-range high low)]
+  (apply max (for*/list ([x (in-range high low -1)]
+               [y (in-range high low -1)]
                #:when (palindrome? (* x y)))
-    (* x y)))
+    (* x y))))
 
 (find-largest-palindrome-product 100 999)
