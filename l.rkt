@@ -2,12 +2,12 @@
 (define % remainder)
 
 (define (prime? n)
-  (if (= 1 n)
-      #f
-      (let loop ((x (floor (sqrt n))))
-        (cond [(= 1 x) #t]
-              [(= 0 (% n x)) #f]
-              [else (loop (sub1 x))]))))
+  (cond [(= 1 n) #f]
+        [(= 0 n) #f]
+        [else (let loop ((x (floor (sqrt n))))
+                (cond [(= 1 x) #t]
+                      [(= 0 (% n x)) #f]
+                      [else (loop (sub1 x))]))]))
 
 (define (factor? a b)
   (= (modulo b a) 0))
