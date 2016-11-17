@@ -30,3 +30,6 @@
 
 (define (string-reverse str)
   (list->string (reverse (string->list str))))
+
+(define (->exact n)
+  (inexact->exact (floor (exact->inexact n))))
