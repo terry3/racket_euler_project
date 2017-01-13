@@ -6,15 +6,17 @@
 
 (include "l.rkt")
 
-(define base (map (lambda (x)
-                    (string-length x))
-                  '("one" "two" "three" "four" "five" "six" "seven" "eight"
-                    "nine" "ten" "eleven" "twelve" "thirteen" "fourteen"
-                    "fifteen" "sixteen" "seventeen" "eighteen" "nineteen")))
-(define tys (map (lambda (x)
-                   (string-length x))
-                 '("twenty" "thirty" "forty" "fifty" "sixty" "seventy"
-                   "eighty" "ninety")))
+(define base
+  (map (lambda (x)
+         (string-length x))
+       '("one" "two" "three" "four" "five" "six" "seven" "eight"
+         "nine" "ten" "eleven" "twelve" "thirteen" "fourteen"
+         "fifteen" "sixteen" "seventeen" "eighteen" "nineteen")))
+(define tys
+  (map (lambda (x)
+         (string-length x))
+       '("twenty" "thirty" "forty" "fifty" "sixty" "seventy"
+         "eighty" "ninety")))
 (define hundred (string-length "hundred"))
 
 (define (number->word-sum n)
