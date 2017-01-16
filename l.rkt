@@ -33,3 +33,8 @@
 
 (define (->exact n)
   (inexact->exact (floor (exact->inexact n))))
+
+(define (number->list n)
+  (map (lambda (x)
+         (- (char->integer x) 48))
+   (string->list (number->string n))))
