@@ -6,10 +6,10 @@
 
 (include "l.rkt")
 
-(define (ep/001/count-multiples-sum a b)
+(define (ep/001/count-multiples-sum . l) ;; rest-id
   (lambda (n)
-    (if (or (= (% n a) 0)
-            (= (% n b) 0))
+    (if (ormap (lambda (i)
+                 (= (% n i) 0)) l)
         n
         0)))
 
@@ -18,9 +18,8 @@
 
 (define (ep/001/execute n)
   (if (> n 0)
-      (let ((ret 0))
-        (set! ret (ep/001/count-multiples-once n))
-        (+ ret (ep/001/execute (- n 1))))
+      (+ (ep/001/count-multiples-once n)
+         (ep/001/execute (- n 1)))
       0))
 
 (ep/001/execute 999)
